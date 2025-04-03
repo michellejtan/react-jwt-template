@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 
 const UserContext = createContext();  // constructor 
 
@@ -20,4 +20,7 @@ function UserProvider({ children }) {
     );
 };
 
+// When components need to use the value of the user context, they will need
+// access to the UserContext object to know which context to access.
+// Therefore, we export it here.
 export { UserProvider, UserContext };
