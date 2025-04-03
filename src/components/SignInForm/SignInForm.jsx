@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 
-// import { signIn } from '../../services/authService';
+import { signIn } from '../../services/authService';
 
 import { UserContext } from '../../contexts/UserContext';
 
@@ -24,9 +24,9 @@ const SignInForm = () => {
     try {
       // This function doesn't exist yet, but we'll create it soon.
       // It will cause an error right now
-    //   const signedInUser = await signIn(formData);
+      const signedInUser = await signIn(formData);
 
-    //   setUser(signedInUser);
+      setUser(signedInUser);
       navigate('/');
     } catch (err) {
       setMessage(err.message);
@@ -39,7 +39,7 @@ const SignInForm = () => {
       <p>{message}</p>
       <form autoComplete='off' onSubmit={handleSubmit}>
         <div>
-          <label htmlFor='username'>Username:</label> {/* lecture note say email, it's wrong*//}
+          <label htmlFor='username'>Username:</label> {/* lecture note say email, it's wrong*/}
           <input
             type='text'
             autoComplete='off'
