@@ -28,8 +28,8 @@ const SignInForm = () => {
 
       setUser(signedInUser);
       navigate('/');
-    } catch (err) {
-      setMessage(err.message);
+    } catch (error) {
+      setMessage(error.message);
     }
   };
 
