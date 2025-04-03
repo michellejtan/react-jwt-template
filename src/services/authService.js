@@ -25,7 +25,7 @@ const signUp = async (formData) => {
         throw new Error('Invalid response from server');
     } catch (error) {
         console.log(error);
-        // throw new Error(error); //don't do this, we don't want to crash
+        throw new Error(error); //don't do this, we don't want to crash<--NOT a crash!
     }
 };
 
@@ -51,7 +51,7 @@ const signIn = async (formData) => {
         throw new Error('Invalid response from server');
     } catch (error) {
         console.log(error);
-        // throw new Error(error); // don't do this, we don't want to crash
+        throw new Error(error); // Not a crash, Error: Invalid Credentials
     }
 };
 
